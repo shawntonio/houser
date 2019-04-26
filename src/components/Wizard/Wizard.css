@@ -1,0 +1,31 @@
+.main-wiz {
+	padding: 20px;
+	padding-top: 90px;
+	background-color: #E5F4EC;
+	margin: 0 20%;
+	height: 100%;
+	overflow: scroll;
+}
+
+.main-wiz>header {
+	display: flex;
+	justify-content: space-between
+}
+
+.cancel {
+	border: none;
+	background-color: #FEC2C2;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.wizard {
+	margin: 40px 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.csz {
+	display: flex;
+}

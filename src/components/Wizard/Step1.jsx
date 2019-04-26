@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Axios from 'axios';
 
 import store, {ADD_HOUSE_INFO} from '../../store';
+import './Wizard.css';
 
 
 export default class Wizard extends Component {
@@ -48,7 +48,7 @@ export default class Wizard extends Component {
 		const { name, state, address, city, zipcode } = this.state
 
 		return (
-			<div>
+			<div className="wizard">
 				<section>
 					<div>
 						<h4>Property Name</h4>
@@ -60,7 +60,7 @@ export default class Wizard extends Component {
 						<input name='address' value={address} onChange={this.inputHandler} type="text" />
 					</div>
 
-					<div>
+					<div className="csz">
 						<div>
 							<h4>City</h4>
 							<input name='city' value={city} onChange={this.inputHandler} type="text" />

@@ -1,23 +1,29 @@
 import React from 'react';
+import './House.css'
 
 function House(props){
 
 	const {name, address, city, state, zip, id, img, mortgage, rent} = props.house
 
 	return(
-		<div>
-			<p>
-				<img src={img} alt="house"/>
-				<span>Property Name: {name}</span>
-				<span>Address: {address}</span>
-				<span>City: {city}</span>
-				<span>State: {state}</span>
-				<span>Zip: {zip}</span>
-				<span>Mortgage: {mortgage}</span>
-				<span>Rent: {rent}</span>
-			</p>
+		<div className="house">
+				<img className="house-pic" src={img} alt="house"/>
 
-			<button onClick={() => props.delete(id)}>Delete</button>
+			<section className="home-info">
+				<p>Property Name: {name}</p>
+				<p>Address: {address}</p>
+				<p>City: {city}</p>
+				<p>State: {state}</p>
+				<p>Zip: {zip}</p>
+			</section>
+
+			<section className="home-price">
+				<p>Mortgage: {mortgage}</p>
+				<p>Rent: {rent}</p>
+			</section>
+
+			
+			<img className="x" onClick={() => props.delete(id)} src="https://raw.githubusercontent.com/shawntonio/simulation-2/master/assets/delete_button.png" alt="x"/>
 		</div>
 	)
 	

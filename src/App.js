@@ -10,8 +10,8 @@ function App() {
     <HashRouter>
       <div className="App">
         <Header />
+        {routes}
       </div>
-      {routes}
     </HashRouter>
   );
 }

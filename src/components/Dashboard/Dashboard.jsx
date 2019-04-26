@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import House from '../House/House';
 import {Link} from 'react-router-dom';
 import Axios from 'axios';
+
+import House from '../House/House';
+import './Dashboard.css';
 
 export default class Dashboard extends Component {
 	constructor(props){
@@ -30,15 +32,17 @@ export default class Dashboard extends Component {
 		))
 
 		return(
-			<div>
-				<header>
-					<h1>Dashboard</h1>
-					<Link to='/wizard/step1'>
-						<button>Add New Property</button>
-					</Link>
-				</header>
-
-				{house}
+			<div className="outer-dash">
+				<div className="dashboard">
+					<header>
+						<h1 className="dash-title">Dashboard</h1>
+						<Link to='/wizard/step1'>
+							<button className="new">Add New Property</button>
+						</Link>
+					</header>
+					<p className="hl">Home Listings</p>
+					{house}
+				</div>
 			</div>
 		)
 	}

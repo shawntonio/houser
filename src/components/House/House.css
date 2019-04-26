@@ -1,0 +1,33 @@
+.house {
+	background-color: #DEDEDE;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+}
+
+.home-info, .home-price{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.home-price {
+	justify-content: flex-start;
+}
+
+.home-price>p{
+	margin-bottom: 15px;
+}
+
+.house-pic {
+	height: 150px;
+	width: 270px;
+}
+
+.x {
+	height: 17px;
+	width: 13px;
+	cursor: pointer;
+}

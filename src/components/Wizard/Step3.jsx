@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 import store, {ADD_HOUSE_INFO, CANCEL} from '../../store';
+import './Wizard.css';
 
 export default class Wizard extends Component {
 	constructor(props) {
