@@ -11,8 +11,15 @@ const initialState = {
 	rent: 0
 }
 
+export const ADD_HOUSE_INFO = 'ADD_HOUSE_INFO'
+export const CANCEL ="CANCEL"
+
 function reducer(state = initialState, action) {
 	switch (action.type) {
+		case ADD_HOUSE_INFO:
+			return {...state, ...action.payload}
+		case CANCEL:
+			return {...initialState}
 		default:
 			return state
 	}

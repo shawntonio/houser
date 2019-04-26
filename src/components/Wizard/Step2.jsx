@@ -2,15 +2,27 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
+import store, {ADD_HOUSE_INFO} from '../../store';
 
 export default class Wizard extends Component {
 	constructor(props) {
 		super(props)
 
+		const reduxState = store.getState()
+
 		this.state = {
-			img: ''
+			img: reduxState.img
 		}
 		this.inputHandler = this.inputHandler.bind(this);
+	}
+
+	componentDidMount(){
+		store.subscribe(() => {
+			const reduxState = store.getState()
+			this.setState({
+				img: reduxState.img
+			})
+		})
 	}
 
 	inputHandler(e) {
@@ -18,6 +30,14 @@ export default class Wizard extends Component {
 		this.setState({
 			[name]: value
 		})
+	}
+
+	updateRedux = () => {
+		const {img} = this.state
+		store.dispatch({
+			type: ADD_HOUSE_INFO, payload: {
+				img
+			}})
 	}
 
 	render() {
@@ -33,10 +53,10 @@ export default class Wizard extends Component {
 				</section>
 
 				<Link to='/wizard/step1'>
-					<button>Previous Step</button>
+					<button onClick={this.updateRedux}>Previous Step</button>
 				</Link>
 				<Link to='/wizard/step3'>
-					<button>Next Step</button>
+					<button onClick={this.updateRedux}>Next Step</button>
 				</Link>
 			</div>
 		)

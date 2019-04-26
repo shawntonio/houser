@@ -9,9 +9,9 @@ module.exports = {
 
 	async createHouse(req, res){
 		const db = req.app.get('db')
-		const {address, name, city, state, zipcode} = req.body
+		const {address, name, city, state, zipcode, img, mortgage, rent} = req.body
 
-		await db.create_house({address, name, city, state, zipcode})
+		await db.create_house({address, name, city, state, zipcode, img, mortgage, rent})
 
 		res.sendStatus(200)
 	},

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
-import store from '../../store';
+import store, {ADD_HOUSE_INFO} from '../../store';
 
 
 export default class Wizard extends Component {
@@ -30,6 +30,18 @@ export default class Wizard extends Component {
 		this.setState({
 			[name]: value
 		})
+	}
+
+	updateRedux = () => {
+		const {name, address, city, state, zipcode} = this.state
+		store.dispatch({
+			type: ADD_HOUSE_INFO, payload: {
+				name,
+				address,
+				city,
+				state,
+				zipcode
+			}})
 	}
 
 	render() {
@@ -67,7 +79,7 @@ export default class Wizard extends Component {
 				</section>
 
 				<Link to='/wizard/step2'>
-					<button>Next Step</button>
+					<button onClick={this.updateRedux}>Next Step</button>
 				</Link>
 			</div>
 		)

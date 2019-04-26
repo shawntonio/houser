@@ -3,11 +3,17 @@ insert into house (
     address,
     city,
     state,
-    zip
+    zip,
+    img,
+    mortgage,
+    rent
 ) values (
     ${name},
     ${address},
     ${city},
     ${state},
-    ${zipcode}
+    ${zipcode},
+    ${img},
+    ${mortgage},
+    ${rent}
 );
