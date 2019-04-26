@@ -2,19 +2,27 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
+import store from '../../store';
+
 
 export default class Wizard extends Component {
 	constructor(props) {
 		super(props)
 
+		const reduxState = store.getState()
+
 		this.state = {
-			name: '',
-			address: '',
-			city: '',
-			state: '',
-			zipcode: 0
+			...reduxState
 		}
+		
 		this.inputHandler = this.inputHandler.bind(this);
+	}
+	componentDidMount(){
+		store.subscribe(() => {
+			this.setState({
+				...store.getState()
+			})
+		})
 	}
 
 	inputHandler(e) {
